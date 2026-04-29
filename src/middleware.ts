@@ -18,10 +18,6 @@ export async function middleware(req: NextRequest) {
   const token = req.cookies.get("token")?.value;
   const pathname = req.nextUrl.pathname;
 
-  console.log("PATH:", pathname);
-  console.log("TOKEN:", token);
-  console.log("SECRET DEFINED:", !!process.env.JWT_SECRET);
-
   const profilRoute = pathname.startsWith("/profil");
   const authRoute = pathname === "/login" || pathname === "/register";
 
