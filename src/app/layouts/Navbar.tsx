@@ -4,6 +4,9 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import styles from './layouts.module.css';
 
+const getUser = await fetch("/api/me")
+const user = await getUser.json();
+
 export default function Navbar(){
     const pathname = usePathname();
     return <header className="shadow">
@@ -22,15 +25,28 @@ export default function Navbar(){
                 </form> 
             </div>
             <div className="col text-end {styles.account} p-4">
+                {user?  
                 <div className="dropdown">
                     <a className="dropdown-toggle text-decoration-none text-black pe-3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i className="fa-solid fa-user pe-2"></i>Compte
+                        <i className="fa-solid fa-user pe-2"></i>{user.email}
+                    </a>
+                    <ul className="dropdown-menu">
+                        <li><Link className="dropdown-item" href="/profil">Profil</Link></li>
+                        <li><hr className="dropdown-divider" /></li>
+                        <li><Link className="dropdown-item" href="/api/logout">Déconnexion</Link></li>
+                    </ul>
+                </div> 
+                :
+                <div className="dropdown">
+                    <a className="dropdown-toggle text-decoration-none text-black pe-3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i className="fa-solid fa-user pe-2"></i>Mon compte
                     </a>
                     <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" href="/login">Connexion</Link></li>
                         <li><Link className="dropdown-item" href="/register">Inscription</Link></li>
                     </ul>
-                </div>   
+                </div> 
+                }  
             </div>
         </div>
     </div>
