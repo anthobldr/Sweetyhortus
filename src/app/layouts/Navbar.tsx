@@ -27,8 +27,8 @@ export default function Navbar(){
                         <i className="fa-solid fa-user pe-2"></i>Compte
                     </a>
                     <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="/SweetyHortus/auth/connexion.php">Se connecter</a></li>
-                        <li><a className="dropdown-item" href="/SweetyHortus/auth/inscription.php">S enregistrer</a></li>
+                        <li><Link className="dropdown-item" href="/login">Connexion</Link></li>
+                        <li><Link className="dropdown-item" href="/register">Inscription</Link></li>
                     </ul>
                 </div>   
             </div>
