@@ -1,0 +1,12 @@
+.navbar :global(.nav-link) {
+  text-transform: uppercase;
+  color: white;
+}
+
+.navbar :global(.nav-link:hover) {
+  color: #2bd81c;
+}
+
+.searchInput::placeholder{
+    font-size: 0.80rem;
+}

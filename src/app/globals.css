@@ -1,0 +1,37 @@
+.bg-green{
+    background-color: #2bd81c;
+}
+
+.bg-light-green{
+    background-color: #9beb85;
+}
+
+.bg-orange{
+    background-color: #ed8b00;
+}
+
+.bg-grey{
+    background-color: #f8f8f8;
+}
+
+.bg-dark-green{
+    background-color: #5d8710;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+button[type="submit"]{
+    color: white;
+    background-color: #ed8b00;
+    border: none;
+}
+
+button[type="submit"]:hover{
+    color: white;
+    background-color: #ed8b00;
+    border: none;
+    transition: transform .2s;
+    transform: scale(1.05);
+}
