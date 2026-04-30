@@ -11,7 +11,7 @@ export const users_account = pgTable("users_account", {
     users_id: integer("users_id").references(() => users.id),
     surname: text("surname").notNull().unique(),
     name: text("name").notNull().unique(),
-    phone: text("phone").notNull().unique(),
-    postcode: text("postcode").notNull().unique(),
-    city: text("city").notNull().unique(),
+    phone: text("phone").unique(),
+    postcode: text("postcode"),
+    city: text("city"),
 })
