@@ -8,6 +8,13 @@
       "when": 1777368165779,
       "tag": "0000_bizarre_shaman",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1777537275047,
+      "tag": "0001_keen_vapor",
+      "breakpoints": true
     }
   ]
 }
