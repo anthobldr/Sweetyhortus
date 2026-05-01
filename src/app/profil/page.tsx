@@ -19,8 +19,8 @@ export default async function Profil() {
   if (!user) {
     return <h1>Token invalide</h1>;
   }
-
-  const [userProfil] = await db.select().from(users).where(eq(users.id, user.userId))
+  const [getUser] = await db.select().from(users).where(eq(users.id, user.userId));
+  const [userProfil] = await db.select().from(users_account).where(eq(users_account.users_id, user.userId));
   return(
     <>
     <Navbar />
@@ -30,7 +30,7 @@ export default async function Profil() {
             <Sidebar />
           </div>
           <div className="col-9 py-5">
-            <ProfilClient user={userProfil}/>
+            <ProfilClient user={getUser} profil={userProfil}/>
           </div>
         </div>
     </div>
