@@ -28,15 +28,9 @@ export async function POST(req: Request){
     //const userProfil = await db.insert(users_account).values({userId, name, surname});
     await db.transaction(async (transaction) => {
     const [{ id: userId }] = await transaction
-        .insert(users)
-        .values({ email, password: hashPassword })
-        .returning({ id: users.id });
+        .insert(users).values({email, password: hashPassword}).returning({ id: users.id });
 
-        await transaction.insert(users_account).values({
-            users_id: userId,
-            surname: surname,
-            name: name,
-        });
+        await transaction.insert(users_account).values({users_id: userId, surname: surname, name: name,});
     });
     return NextResponse.json({success: true, users})
 }
