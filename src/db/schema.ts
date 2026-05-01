@@ -12,6 +12,7 @@ export const users_account = pgTable("users_account", {
     surname: text("surname").notNull().unique(),
     name: text("name").notNull().unique(),
     phone: text("phone").unique(),
+    adress: text("adress"),
     postcode: text("postcode"),
     city: text("city"),
 })
