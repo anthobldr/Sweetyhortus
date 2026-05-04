@@ -40,13 +40,13 @@ export default function ProfilClient({ user, profil }: Props){
                 <div className="row g-3 mb-3">
                     <div className="col-4">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setSurname(e.target.value)} id="surnameProfil" placeholder="name@example.com" defaultValue={profil.surname} />
+                            <input type="text" className="form-control" onChange={(e) => setSurname(e.target.value)} id="surnameProfil" placeholder="name@example.com" defaultValue={profil.surname} />
                             <label htmlFor="surnameProfil">Nom</label>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setName(e.target.value)} id="nameProfil" placeholder="name@example.com" defaultValue={profil.name} />
+                            <input type="text" className="form-control" onChange={(e) => setName(e.target.value)} id="nameProfil" placeholder="name@example.com" defaultValue={profil.name} />
                             <label htmlFor="nameProfil">Prénom</label>
                         </div>
                     </div>
@@ -54,13 +54,13 @@ export default function ProfilClient({ user, profil }: Props){
                 <div className="row g-3 mb-3">
                     <div className="col-4">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setSurname(e.target.value)} id="emailProfil" placeholder="Email" value={user.email} disabled />
+                            <input type="email" className="form-control" id="emailProfil" placeholder="Email" value={user.email} disabled />
                             <label htmlFor="emailProfil">E-mail</label>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setPhone(e.target.value)} id="phoneProfil" placeholder="Téléphone" defaultValue={profil.phone?? ""} />
+                            <input type="tel" className="form-control" onChange={(e) => setPhone(e.target.value)} id="phoneProfil" placeholder="Téléphone" defaultValue={profil.phone?? ""} />
                             <label htmlFor="phoneProfil">Téléphone</label>
                         </div>
                     </div>
@@ -68,19 +68,19 @@ export default function ProfilClient({ user, profil }: Props){
                 <div className="row g-3 mb-3">
                     <div className="col-3">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setAdress(e.target.value)} id="adressProfil" placeholder="name@example.com" defaultValue={profil.adress?? ""} />
+                            <input type="text" className="form-control" onChange={(e) => setAdress(e.target.value)} id="adressProfil" placeholder="name@example.com" defaultValue={profil.adress?? ""} />
                             <label htmlFor="adressProfil">Adresse</label>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setPostCode(e.target.value)} id="postalProfil" placeholder="name@example.com" defaultValue={profil.postcode?? ""} />
-                            <label htmlFor="postalProfi">Code Postal</label>
+                            <input type="text" className="form-control" onChange={(e) => setPostCode(e.target.value)} id="postalProfil" placeholder="name@example.com" defaultValue={profil.postcode?? ""} />
+                            <label htmlFor="postalProfil">Code Postal</label>
                         </div>
                     </div>
                     <div className="col-3">
                         <div className="form-floating">
-                            <input type="email" className="form-control" onChange={(e) => setCity(e.target.value)} id="cityProfil" placeholder="name@example.com" defaultValue={profil.city?? ""} />
+                            <input type="text" className="form-control" onChange={(e) => setCity(e.target.value)} id="cityProfil" placeholder="name@example.com" defaultValue={profil.city?? ""} />
                             <label htmlFor="cityProfil">Ville</label>
                         </div>
                     </div>

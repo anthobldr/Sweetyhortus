@@ -11,21 +11,11 @@
     font-size: 0.80rem;
 }
 
-#users_nav{
-    color: white;
+.users_nav .activeLink {
+  color: white !important;
+  background-color: #5d8710 !important;
 }
 
-#users_nav .nav-item > .nav-link{
-    color: black;
-}
-
-#users_nav .nav-item > .nav-link.active{
-    color: #2bd81c;
-    background-color: #5d8710;
-}
-
-
-#users_nav .nav-item > .nav-link:hover{
-    color: #2bd81c;
-    background-color: #5d8710;
+.users_nav :global(.nav-link){
+  color: #5d8710;
 }

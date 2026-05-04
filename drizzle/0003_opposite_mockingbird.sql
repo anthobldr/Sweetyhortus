@@ -1,0 +1,1 @@
+ALTER TABLE "users_account" ADD COLUMN "adress" text;
