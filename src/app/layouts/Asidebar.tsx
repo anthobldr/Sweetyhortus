@@ -1,20 +1,24 @@
+"use client"
 import Link from "next/link";
 import styles from "./layouts.module.css";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
+  
   return (
     <div className="d-flex flex-column flex-shrink-0 h-100">
       <ul className={`nav nav-pills d-flex flex-column mb-auto my-5 ms-3 list-unstyled ${styles.users_nav}`}>
         
         <li className="mb-3">
-          <Link href="/profil" className={`nav-link ${styles.activeLink}`}>
+          <Link href="/profil" className={`nav-link ${pathname == "/profil" ? styles.activeLink : ""}`}>
             <i className="bi bi-person-fill-gear pe-2"></i>
             Générale
           </Link>
         </li>
 
         <li className="mb-3">
-          <Link href="./security.php" className="nav-link">
+          <Link href="/profil/security" className={`nav-link ${pathname == "/profil/security" ? styles.activeLink : ""}`}>
             <i className="bi bi-fingerprint pe-2"></i>
             Sécurité
           </Link>

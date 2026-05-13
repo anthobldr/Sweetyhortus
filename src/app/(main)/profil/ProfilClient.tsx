@@ -1,7 +1,7 @@
 "use client"
 import { users, users_account } from "@/db/schema";
 import { useState } from "react";
-import Success from "../components/SuccessAlert";
+import Success from "@/app/components/SuccessAlert";
 
 type User = typeof users.$inferSelect;
 type Profil = typeof users_account.$inferSelect;

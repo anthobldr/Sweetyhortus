@@ -1,13 +1,15 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { users } from "@/db/schema";
 import Image from 'next/image';
 import styles from './layouts.module.css';
+type User = typeof users.$inferSelect;
 
-const getUser = await fetch("/api/me")
-const user = await getUser.json();
-
-export default function Navbar(){
+type Props = {
+    user: User | null;
+}
+export default function Navbar({user}: Props){
     const pathname = usePathname();
     return <header className="shadow">
     <div className="container-fluid bg-green">
@@ -24,7 +26,7 @@ export default function Navbar(){
                     <button className={`form-control me-2 btn btn-outline-success ${styles.searchSubmit}`} type="submit">Rechercher</button>
                 </form> 
             </div>
-            <div className="col text-end {styles.account} p-4">
+            <div className={`col text-end ${styles.account} p-4`}>
                 {user?  
                 <div className="dropdown">
                     <a className="dropdown-toggle text-decoration-none text-black pe-3" role="button" data-bs-toggle="dropdown" aria-expanded="false">

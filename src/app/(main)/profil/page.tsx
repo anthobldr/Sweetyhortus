@@ -3,8 +3,7 @@ import { verifyToken } from "@/lib/jwt";
 import { db } from "@/db/db";
 import { eq } from "drizzle-orm";
 import { users, users_account } from "@/db/schema";
-import Sidebar from "../layouts/Asidebar";
-import Navbar from "../layouts/Navbar";
+import Sidebar from "@/app/layouts/Asidebar";
 import ProfilClient from "./ProfilClient";
 
 export default async function Profil() {
@@ -23,7 +22,6 @@ export default async function Profil() {
   const [userProfil] = await db.select().from(users_account).where(eq(users_account.users_id, user.userId));
   return (
   <div>
-    <Navbar />
     <div className="container-fluid overflow-hidden">
       <div className="row h-100">
         <div className="col-2 p-0">
